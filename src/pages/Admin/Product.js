@@ -48,12 +48,16 @@ const Products = () => {
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="" class="form-label fw-bold">Category</label>
-                                                    <select class="form-select" id="cat_list" required>
+                                                    <select class="form-select cat_list" required>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
+                                                    <label for="formFile" class="form-label fw-bold">Brand</label>
+                                                    <input class="form-control" id="brand" type="text">
+                                                </div>
+                                                <div class="col-md-6 mb-3">
                                                     <label for="formFile" class="form-label fw-bold">Image</label>
-                                                    <input class="form-control" id="image" type="file" id="formFile">
+                                                    <input class="form-control" type="file" id="formFile">
                                                 </div>
                                                 <div class="col-12 mb-3">
                                                     <label for="" class="form-label fw-bold">Description</label>
@@ -76,7 +80,7 @@ const Products = () => {
                         <div class="modal fade" id="update_product" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-lg">
-                                <form id="add_room_form" autocomplete="off">
+                                <form id="update_product_form" autocomplete="off">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title">Add Product</h5>
@@ -85,37 +89,40 @@ const Products = () => {
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="" class="form-label fw-bold">Title</label>
-                                                    <input type="text" class="form-control shadow-none" require>
+                                                    <input id="title_update" type="text" class="form-control shadow-none" require>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="" class="form-label fw-bold">Price</label>
-                                                    <input type="number" min="1" class="form-control shadow-none"
+                                                    <input id="price_update" type="number" min="1" class="form-control shadow-none"
                                                         require>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="" class="form-label fw-bold">Quantity</label>
-                                                    <input type="text" min="1" class="form-control shadow-none" require>
+                                                    <input id="quantity_update" type="text" min="1" class="form-control shadow-none" require>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="" class="form-label fw-bold">Discount(%)</label>
-                                                    <input type="text" min="1" class="form-control shadow-none" require>
+                                                    <input id="discount_update" type="text" min="1" class="form-control shadow-none" require>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="" class="form-label fw-bold">Brand</label>
-                                                    <input type="text" min="1" class="form-control shadow-none" require>
+                                                    <input id="brand_update" type="text" min="1" class="form-control shadow-none" require>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="" class="form-label fw-bold">Category</label>
-                                                    <select class="form-select" id="cat_list" required>
+                                                    <select id="cat_update" class="form-select cat_list" required>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="formFile" class="form-label">Image</label>
-                                                    <input class="form-control" type="file" id="formFile">
+                                                    <input id="img_update" class="form-control" type="file" id="formFile">
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <img id="img_current" width="100">
                                                 </div>
                                                 <div class="col-12 mb-3">
                                                     <label for="" class="form-label fw-bold">Description</label>
-                                                    <textarea rows="4" class="form-control shadow-none"
+                                                    <textarea rows="4" id="desc_update" class="form-control shadow-none"
                                                         require></textarea>
                                                 </div>
                                             </div>
@@ -123,8 +130,8 @@ const Products = () => {
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary shadow-none"
                                                 data-bs-dismiss="modal">Cancel</button>
-                                            <button type="submit"
-                                                class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                            <button type="submit" id="btn_update"
+                                                class="btn custom-bg text-white shadow-none">UPDATE</button>
                                         </div>
                                     </div>
                                 </form>
@@ -140,6 +147,7 @@ const Products = () => {
                                         <th class="bg-dark text-white" scope="col" width="30%">Title</th>
                                         <th class="bg-dark text-white" scope="col">Price</th>
                                         <th class="bg-dark text-white" scope="col">Image</th>
+                                        <th class="bg-dark text-white" scope="col">Brand</th>
                                         <th class="bg-dark text-white" scope="col">Category</th>
                                         <th class="bg-dark text-white" scope="col">Discount(%)</th>
                                         <th class="bg-dark text-white" scope="col">Quantity</th>

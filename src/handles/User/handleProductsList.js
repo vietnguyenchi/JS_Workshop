@@ -33,7 +33,7 @@ const handleProductsList = async () => {
                                     <span class="lnr lnr-sync"></span>
                                     <p class="hover-text">compare</p>
                                 </a>
-                                <a href="/product_detail/${product.id}" class="social-info">
+                                <a href="/products/${product.id}" class="social-info">
                                     <span class="lnr lnr-move"></span>
                                     <p class="hover-text">view more</p>
                                 </a>

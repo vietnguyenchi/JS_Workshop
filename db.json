@@ -19,6 +19,16 @@
       "cart": [],
       "role": "user",
       "id": 2
+    },
+    {
+      "email": "chiviet123@gmail.com",
+      "password": "$2a$10$toR3wBMl8mOMVnuVM2PCI.5.6Mf.GTlUIkMY4cBK0oBFUg8L1RPcO",
+      "username": "viet",
+      "address": "",
+      "phone": "",
+      "cart": [],
+      "role": "user",
+      "id": 3
     }
   ],
   "categories": [
@@ -53,23 +63,30 @@
     {
       "name": "Basketball",
       "id": 8
+    },
+    {
+      "name": "sdafasdfasf",
+      "id": 9
     }
   ],
   "products": [
     {
       "title": "FORUM LOW CL SHOES",
-      "price": 1500,
-      "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706594753/JS-workshop/du6rirfeclkfskqgq04l.webp",
-      "quantity": 30,
-      "discount": 5,
+      "price": "3000",
+      "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706769366/JS-workshop/dvtpafsuvzpdgghvje7q.webp",
+      "quantity": "30",
+      "brand": "Adidas",
+      "discount": "5",
       "category": "Adidas Superstar",
       "description": "Description",
-      "id": 1
+      "id": 1,
+      "desc": "Description"
     },
     {
       "title": "SUPERSTAR XLG SHOES",
       "price": "2000",
       "quantity": "31",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595186/JS-workshop/rlkkmqcuvdjcqkqvg45j.webp",
       "discount": "5",
       "category": "Adidas Superstar",
@@ -80,6 +97,7 @@
       "title": "Continental 80 Stripes Shoes",
       "price": "2000",
       "quantity": "41",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595318/JS-workshop/mu7lrzlqko8f0h7y61ma.webp",
       "discount": "3",
       "category": "Adidas NMD",
@@ -90,6 +108,7 @@
       "title": "NMD RI Shoes",
       "price": "2300",
       "quantity": "41",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595402/JS-workshop/gryvmbmr0wxd5huwqkh9.jpg",
       "discount": "6",
       "category": "Adidas Runtastic",
@@ -100,6 +119,7 @@
       "title": "Adifom Supernova Shoes",
       "price": "1600",
       "quantity": "12",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595446/JS-workshop/pqttrxrivamz6v3ooees.webp",
       "discount": "8",
       "category": "AdiPure",
@@ -110,6 +130,7 @@
       "title": "A.E. 1 Low Trainers",
       "price": "3000",
       "quantity": "52",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595655/JS-workshop/zbt2em9do0w73ryfy740.webp",
       "discount": "10",
       "category": "Adidas NMD",
@@ -120,6 +141,7 @@
       "title": "Trae Young 3 Shoes",
       "price": "2800",
       "quantity": "31",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595709/JS-workshop/dczxbhtev9dz49artxl4.webp",
       "discount": "10",
       "category": "Adidas Yeezy",
@@ -130,6 +152,7 @@
       "title": "Trae IJnlimited Shoes",
       "price": "2840",
       "quantity": "32",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595878/JS-workshop/mq7kpmi0uplyzt0isb5m.webp",
       "discount": "10",
       "category": "Basketball",
@@ -140,11 +163,24 @@
       "title": "Trae Young 1 Shoes",
       "price": "2100",
       "quantity": "23",
+      "brand": "Adidas",
       "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706595924/JS-workshop/fqd7nuzcburj2ddftzhw.webp",
       "discount": "4",
       "category": "Adidas Originals",
       "description": "a",
       "id": 9
+    },
+    {
+      "title": "ccccccccc",
+      "price": "12000",
+      "quantity": "12",
+      "brand": "ádafasf",
+      "image": "https://res.cloudinary.com/drxguvfuq/image/upload/v1706771701/JS-workshop/jwbw2nv6a3nreeursdfo.jpg",
+      "discount": "12",
+      "category": "Adidas Ultraboost",
+      "description": "ádfasdfsdafas",
+      "id": 10,
+      "desc": "ádfasdfsdafas"
     }
   ]
 }

@@ -27,7 +27,7 @@ router.on('/products', () => render(app, ProductList), {
     }
 });
 
-router.on('/product_detail/:id', () => render(app, ProductDetail), {
+router.on('/products/:id', () => render(app, ProductDetail), {
     after({data}) {
         handleProductDetail(data);
     }
@@ -79,19 +79,8 @@ router.on('/admin/categories', () => render(app, Categories), {
     },
     after() {
         handleCategories();
-        document.getElementById('add_category').addEventListener('submit', (e) => {
-            // e.preventDefault();
-            addCategory();
-        })
     }
 });
-
-router.on('/admin/categories/delete_cat/:id', () => render(app, Categories), {
-    after({ data }) {
-        delete_cat(data.id);
-        handleCategories();
-    }
-})
 
 router.on('/admin/products', () => render(app, Products), {
     before(done) {

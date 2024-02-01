@@ -60,7 +60,7 @@ const Header = () => {
                                     <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
                                 </li>
                                 <li class="nav-item submenu dropdown mt-3 me-3 position-relative">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"

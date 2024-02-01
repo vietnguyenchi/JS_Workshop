@@ -11,37 +11,58 @@ const Categories = () => {
                     <div class="card border-0 shadow-sm sm-4">
                         <div class="card-body">
 
-                        <div class="text-end mb-4">
-                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#add_cat">
-                                + </i>Add
-                            </button>
-                        </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="add_cat" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-md">
-                                <form id="add_category" autocomplete="off">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Add Category</h5>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label for="" class="form-label fw-bold">Name</label>
-                                            <input id="name_cat" type="text" class="form-control shadow-none" require>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary shadow-none"
-                                                data-bs-dismiss="modal">Cancel</button>
-                                            <button type="submit"
-                                                class="btn custom-bg text-white shadow-none">ADD</button>
-                                        </div>
-                                    </div>
-                                </form>
+                            <div class="text-end mb-4">
+                                <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#add_cat">
+                                    + </i>Add
+                                </button>
                             </div>
-                        </div>
 
+                            <!-- Modal -->
+                            <div class="modal fade" id="add_cat" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md">
+                                    <form id="add_category" autocomplete="off">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Add Category</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label for="" class="form-label fw-bold">Name</label>
+                                                <input id="name_cat" type="text" class="form-control shadow-none" require>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary shadow-none"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit"
+                                                    class="btn custom-bg text-white shadow-none">ADD</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="update_cat" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md">
+                                    <form id="add_category" autocomplete="off">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Update Category</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label for="" class="form-label fw-bold">Name</label>
+                                                <input id="name_update" type="text" class="form-control shadow-none" require>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary shadow-none"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" id="btn_update"
+                                                    class="btn custom-bg text-white shadow-none">UPDATE</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
 
                             <div class="table-responsive-md" style="height: 500px; overflow-y: scroll;">
                                 <table class="table table-hover border table-bordered">
