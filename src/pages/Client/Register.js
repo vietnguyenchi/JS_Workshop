@@ -58,7 +58,7 @@ const Register = () => {
                                 <h4>New to our website?</h4>
                                 <p>There are advances being made in science and technology everyday, and a good example of
                                     this is the</p>
-                                <a class="primary-btn" href="registration.html">I already have an account</a>
+                                <a class="primary-btn" href="/login">I already have an account</a>
                             </div>
                         </div>
                     </div>	

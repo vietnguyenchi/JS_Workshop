@@ -3,7 +3,7 @@ import { checkLogin } from "../utilities";
 const Header = () => {
     return /*html*/`
         <!-- Start Header Area -->
-        <header class="header_area sticky-header">
+        <header class="header_area sticky-header z-3">
             <div class="main_menu">
                 <nav class="navbar navbar-expand-lg navbar-light main_box">
                     <div class="container">
@@ -55,7 +55,6 @@ const Header = () => {
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right ms-auto">
-                                <li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
                                 <li class="nav-item">
                                     <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
                                 </li>

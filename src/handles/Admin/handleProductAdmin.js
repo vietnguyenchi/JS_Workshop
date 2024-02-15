@@ -64,7 +64,8 @@ const handleProductsListAdmin = async function () {
         btn.addEventListener('click', () => deleteProduct(id));
     }
     const btn_update = document.getElementById('btn_update');
-    btn_update.addEventListener('click', () => {
+    btn_update.addEventListener('click', (e) => {
+        e.preventDefault();
         const id = btn_update.getAttribute('data-id-pro');
         updateProduct(id);
     })
@@ -117,7 +118,6 @@ const upLoadFile = async function (file) {
     formData.append('upload_preset', PRESET_NAME);
     formData.append('folder', FOLDER_NAME);
     formData.append('file', file);
-    console.log(file);
 
     const response = await axios.post(api, formData, {
         headers: { 'Content-Type': 'multipart/form-data', }
@@ -146,8 +146,12 @@ const setDataUpdate = async function (id) {
 
 const deleteProduct = async function (id) {
     if (confirm('Are you sure you want to delete this product')) {
-        await instance.delete(`/products/${id}`);
-        alert('Delete product successfully');
+        try {
+            await instance.delete(`/products/${id}`);
+            alert('Delete product successfully');
+        } catch (error) {
+            console.log(error);
+        }
         handleProductsListAdmin();
     }
 }
@@ -160,27 +164,35 @@ const updateProduct = async function (id) {
     const discount_update = document.getElementById('discount_update').value;
     const desc_update = document.getElementById('desc_update').value;
     const img_update = document.getElementById('img_update');
-    const pro_update = {}
-    console.log(img_update.files.length);
-    if(img_update.files.length > 0) {
-        pro_update.title = title_update;
-        pro_update.price = price_update;
-        pro_update.quantity = quantity_update;
-        pro_update.discount = discount_update;
-        pro_update.desc = desc_update;
-        pro_update.brand = brand_update;
-        const url_image = await upLoadFile(img_update.files[0]);
-        pro_update.image = url_image;
-    } else {
-        pro_update.title = title_update;
-        pro_update.price = price_update;
-        pro_update.quantity = quantity_update;
-        pro_update.discount = discount_update;
-        pro_update.desc = desc_update;
-        pro_update.brand = brand_update;
+
+    const pro_update = {
+        title: title_update,
+        price: price_update,
+        quantity: quantity_update,
+        discount: discount_update,
+        desc: desc_update,
+        brand: brand_update
     }
 
-    const response = await instance.patch(`/products/${id}`, pro_update);
+    if (img_update.files.length > 0) {
+        const url_image = await upLoadFile(img_update.files[0]);
+        try {
+            await instance.patch(`/products/${id}`, { ...pro_update, image: url_image })
+            alert("Update successfully");
+            window.location.reload();
+        } catch (error) {
+            console.log(error);
+        }
+    } else {
+        try {
+            await instance.patch(`/products/${id}`, pro_update);
+            alert("Update successfully");
+            window.location.reload();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 }
 
 export { handleProductsListAdmin, addProduct };

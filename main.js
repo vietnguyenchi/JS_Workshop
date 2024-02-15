@@ -6,14 +6,18 @@ import ProductList from "./src/pages/Client/ProductList";
 import Products from "./src/pages/Admin/Product";
 import Register from "./src/pages/Client/Register";
 import { render, router } from "./src/utilities";
-import handleDashboard from "./src/handles/Admin/handleDashboard";
 import setActive from "./src/components/setActive";
 import Categories from "./src/pages/Admin/Category";
-import { addCategory, delete_cat, handleCategories, renderCat } from "./src/handles/Admin/handleCategory";
+import { handleCategories, renderCat } from "./src/handles/Admin/handleCategory";
 import { addProduct, handleProductsListAdmin } from "./src/handles/Admin/handleProductAdmin";
 import handleProductsList from "./src/handles/User/handleProductsList";
 import ProductDetail from "./src/pages/Client/ProductDetail";
 import handleProductDetail from "./src/handles/User/handleProductDetail";
+import Cart from "./src/pages/Client/Cart";
+import handleCart from "./src/handles/User/handleCart";
+import DashBoard from "./src/pages/Admin/Dashboard";
+import LoginAdmin from "./src/pages/Admin/LoginAdmin";
+import handleLoginAdmin from "./src/handles/Admin/handleLoginAdmin";
 
 const app = document.getElementById("app");
 const user = JSON.parse(sessionStorage.getItem('user'));
@@ -28,15 +32,20 @@ router.on('/products', () => render(app, ProductList), {
 });
 
 router.on('/products/:id', () => render(app, ProductDetail), {
-    after({data}) {
+    after({ data }) {
         handleProductDetail(data);
     }
-})
+});
+
+router.on('/cart', () => render(app, Cart), {
+    after() {
+        handleCart();
+    }
+});
 
 router.on('/login', () => render(app, LogIn), {
     after() {
         const btnLogIn = document.getElementById('btnLogIn');
-        console.log(btnLogIn);
         btnLogIn.addEventListener('click', handleLogin);
     }
 });
@@ -53,18 +62,29 @@ router.on('/logOut', () => {
     location.reload();
 });
 
+// console.log(user)
 
 // Admin
-router.on("/admin", () => render(app, handleDashboard), {
+router.on("/admin", () => render(app, DashBoard), {
     before(done) {
-        if (user.role !== 'admin') {
-            alert('You not allowed');
-            router.navigate('/');
+        if (!user || user.role !== 'admin') {
+            router.navigate('/loginAdmin');
         }
         done();
     },
     after() {
         setActive();
+    }
+});
+
+router.on("/loginAdmin", () => render(app, LoginAdmin), {
+    before(done) {
+        if (user) router.navigate('/admin');
+        done();
+    },
+    after() {
+        const btnLoginAdmin = document.getElementById('btnSignIn');
+        btnLoginAdmin.addEventListener('click', handleLoginAdmin);
     }
 });
 

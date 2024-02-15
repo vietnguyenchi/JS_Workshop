@@ -49,11 +49,12 @@ const handleCategories = async function (){
     }
 
     const btn_update = document.getElementById('btn_update');
-    const id_cat = document.getElementById('update_cat').getAttribute('data-id-cat');
     btn_update.addEventListener('click', (e) => {
         e.preventDefault();
-        updateCat(id_cat)
+        const id_cat = btn_update.getAttribute('data-id-cat');
+        updateCat(id_cat);
     });
+
 }
 
 const addCategory = async function () {
@@ -80,15 +81,15 @@ const delete_cat = async function (id) {
 const setDataUpdate = async function (id) {
     const {data} = await instance.get(`/categories/${id}`);
     document.getElementById('name_update').value = data.name;
-    document.getElementById('update_cat').setAttribute('data-id-cat', data.id);
+    document.getElementById('btn_update').setAttribute('data-id-cat', data.id);
 }
 
 const updateCat = async function (id) {
-    console.log(id);
     const name_update = document.getElementById('name_update').value;
     const cat_update = {name: name_update};
     await instance.patch(`/categories/${id}`, cat_update);
     alert("Update category successfully");
+    location.reload();
 }
 
 const renderCat = function() {

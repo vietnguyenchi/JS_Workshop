@@ -164,6 +164,6 @@
 
   };
   $(function () {
-    setTimeout(scroller, 0);
+    setTimeout(scroller, 1);
   });
 })(jQuery);
